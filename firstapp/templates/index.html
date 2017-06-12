@@ -40,7 +40,7 @@
     </div>
     <div class="ui inverted segment container nav">
         <div class="ui  three borderless  item  menu">
-            <a class="item">
+            <a class="active item" href="#list/all">
                         All
                     </a>
             <a class="item">
@@ -48,7 +48,7 @@
                     </a>
 
 
-            <a class="active item" href="#list/editors">
+            <a class="item" href="#list/editors">
                         Editor's
                     </a>
 
@@ -61,183 +61,26 @@
     <div class="ui basic segment container content">
 
         <div class="ui three column grid">
-
+            {% for article in article_list %}
             <div class="column">
                 <a class="ui fluid card" href="#">
                     <div class="image">
-                        <img src="{% static 'images/1.jpg' %}" alt="" style="height:200px;object-fit: cover;">
+                        <img src="{{ article.img }}" alt="" style="height:200px;object-fit: cover;">
                     </div>
                 </a>
 
-                <div class="title header" href="#">Ut unde numquam non nisi.</div>
+                <div class="title header" href="#">{{ article.title }}</div>
 
                 <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
+                <span style="color:#bbbbbb">{{ article.views }}</span>
 
                 <span class="" style="color:rgb(226, 226, 226)">|</span>
 
                 <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
+                <span style="color:#bbbbbb"> {{ article.favs }} people got it</span>
 
             </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/2.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Nesciunt eligendi qui et si...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/3.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Quo accusantium commodi in ...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/4.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Deleniti laudantium cum occ...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/5.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Aliquid impedit et iure fug...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/6.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Corporis qui odio perferend...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/7.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Molestiae cupiditate et ut ...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/8.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Rem accusamus dicta repudia...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
-
-
-
-            <div class="column">
-                <a class="ui fluid card" href="#">
-                    <div class="image">
-                        <img src="{% static 'images/9.jpg' %}" alt="" style="height:200px;object-fit: cover;">
-                    </div>
-                </a>
-
-                <div class="title header" href="#">Ad et voluptatibus qui. Nih...</div>
-
-                <i class="icon grey unhide"></i>
-                <span style="color:#bbbbbb">10K</span>
-                <span class="" style="color:rgb(226, 226, 226)">|</span>
-                <i class="icon grey checkmark"></i>
-                <span style="color:#bbbbbb"> 10 people got it</span>
-
-            </div>
+            {% endfor %}
         </div>
     </div>
 
