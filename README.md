@@ -22,4 +22,10 @@ POST
 让一个评论只属于一篇文章
 1.	在 models.py 让 Comment 和 Article 是多对一关系，多个评论可以属于一个文章，并在 template 的详情页 html 和 views.py 实现相应改动
 
+实现视图分离，把 get 请求渲染表单和 post 请求提交表单拆分成两个视图
+1.	在views.py 中定义一个新的函数comment，urls.py定义的评论地址规则，指向这个函数。这个函数处理完评论请求后，跳回文章详情页面
+2.	删除 views.py中detail函数的提交评论功能
+3.	修改detail.html模板的评论表单，指向新的评论地址
+4.	在 urls.py 中定义一个新的地址规则，规则名称为comment，只有向http://127.0.0.1:8000/comment/1的类似地址发送post请求，才能提交评论
+
 

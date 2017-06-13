@@ -61,7 +61,7 @@
             {% for comment in article.under_comments.all %}
                 <div class="comment">
                     <div class="avatar">
-                        <img src="comment.avatar" alt="" />
+                        <img src="http://semantic-ui.com/images/avatar/small/matt.jpg"  alt="" />
                     </div>
                     <div class="content">
                         <a href="#" class="author">{{ comment.name }}</a>
@@ -78,7 +78,7 @@
             {% endfor %}
         </div>
         <div class="ui divider"></div>
-        <form class="ui error tiny form" method="post">
+        <form class="ui error tiny form" action="{% url 'comment' article.id %}" method="post" >
             {% if forms.error %}
                 <div class="ui error message">
                     {{ form.errors }}
