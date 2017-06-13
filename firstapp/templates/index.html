@@ -63,13 +63,13 @@
         <div class="ui three column grid">
             {% for article in article_list %}
             <div class="column">
-                <a class="ui fluid card" href="#">
+                <a class="ui fluid card" href="{% url 'detail' article.id %}">
                     <div class="image">
                         <img src="{{ article.img }}" alt="" style="height:200px;object-fit: cover;">
                     </div>
                 </a>
 
-                <div class="title header" href="#">{{ article.title }}</div>
+                <div class="title header" href="{% url 'detail' article.id %}">{{ article.title }}</div>
 
                 <i class="icon grey unhide"></i>
                 <span style="color:#bbbbbb">{{ article.views }}</span>

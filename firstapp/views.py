@@ -11,7 +11,7 @@ def index(request):
 	context['article_list'] = article_list
 	return render(request,'index.html', context)
 
-def detail(request):
+def detail(request, page_num):
 	if request.method == "GET":
 		form = CommentForm
 	if request.method == "POST":
@@ -24,6 +24,8 @@ def detail(request):
 			return redirect(to="detail")
 	context = {}
 	comment_list = Comment.objects.all()
+	article = Article.objects.get(id=page_num)
+	context['article'] = article
 	context['comment_list'] = comment_list
 	context['form'] = form
 	return render(request, 'detail.html', context)
