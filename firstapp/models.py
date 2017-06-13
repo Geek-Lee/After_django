@@ -14,7 +14,8 @@ class Article(models.Model):
 class Comment(models.Model):
     name = models.CharField(max_length=10)
     avatar = models.CharField(max_length=100, default="static/images/default.png")
-    content = models.TextField()
+    content = models.TextField(null=True, blank=True)
     createtime = models.DateField(auto_now=True)
+    belong_to = models.ForeignKey(to=Article, related_name="under_comments", null=True, blank=True)
     def __str__(self):
         return self.content

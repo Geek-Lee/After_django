@@ -17,4 +17,9 @@ POST
 1.	在 urls.py 里修改 detail 的 url，使其能根据不同文章跳转到类似： detail/1 形式的 url 中
 2.	在 view 中添加参数，从而获取每一页的文章
 3.	在 template 里的详情页 html 里把写死的文章替换成动态的文章
+4.	在 template 里的列表页实现跳转到详情页
+
+让一个评论只属于一篇文章
+1.	在 models.py 让 Comment 和 Article 是多对一关系，多个评论可以属于一个文章，并在 template 的详情页 html 和 views.py 实现相应改动
+
 

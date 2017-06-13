@@ -19,13 +19,12 @@ def detail(request, page_num):
 		if form.is_valid():
 			name = form.cleaned_data["name"]
 			content = form.cleaned_data["comment"]
-			c = Comment(name=name, content=content)
+			article = Article.objects.get(id=page_num)
+			c = Comment(name=name, content=content, belong_to=article)
 			c.save()
-			return redirect(to="detail")
+			return redirect(to="detail", page_num=page_num)
 	context = {}
-	comment_list = Comment.objects.all()
 	article = Article.objects.get(id=page_num)
 	context['article'] = article
-	context['comment_list'] = comment_list
 	context['form'] = form
 	return render(request, 'detail.html', context)

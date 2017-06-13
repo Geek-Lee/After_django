@@ -58,7 +58,7 @@
     <div class="ui segment container" style="width:700px;border:none;box-shadow:none">
         <h3 class="ui horizontal divider header" style="">Comments</h3>
         <div class="ui comments" style="bodered:none">
-            {% for comment in comment_list %}
+            {% for comment in article.under_comments.all %}
                 <div class="comment">
                     <div class="avatar">
                         <img src="comment.avatar" alt="" />
