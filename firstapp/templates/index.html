@@ -86,13 +86,35 @@
 
     <div class="ui center aligned very padded vertical segment container">
         <div class="ui pagination menu">
-            <a href="#" class="item">
-                <i class="icon red left arrow"></i>
-            </a>
-
-            <a href="#" class="item">
-                <i class="icon red right arrow"></i>
-            </a>
+            {% if article_list.has_previous %}
+                <a href="?page={{ article_list.previous_page_number }}" class="item">
+                    <i class="icon red left arrow"></i>
+                </a>
+            {% else %}
+                <a href="?page={{ article_list.start_index }}" class="disabled item">
+                    <i class="icon left arrow"></i>
+                </a>
+            {% endif %}
+            {% for page_number in article_list.paginator.page_range %}
+                {% ifequal page_number article_list.number %}
+                    <a href="?page={{ page_number }}" class="active item" style="background-color: red; color:white">
+                        {{ page_number }}
+                    </a>
+                {% else %}
+                    <a href="?page={{ page_number }}" class="item">
+                        {{ page_number }}
+                    </a>
+                {% endifequal %}
+            {% endfor %}
+            {% if article_list.has_next %}
+                <a href="?page={{ article_list.next_page_number }}" class="item">
+                    <i class="icon red right arrow"></i>
+                </a>
+            {% else %}
+                <a href="?page={{ article_list.end_index }}" class="disabled item">
+                    <i class="icon right arrow"></i>
+                </a>
+            {% endif %}
         </div>
     </div>
 </body>
